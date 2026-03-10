@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Description: Link dotfiles to home directory
+
+if [[ -f ~/dotfiles/.bashrc ]]; then
+	ln -sf ~/dotfiles/.bashrc ~/.bashrc
+	echo "\".bashrc\" linked"
+fi
+
+if [[ -f ~/dotfiles/.tmux.conf ]]; then
+	ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
+	echo "\".tmux.conf\" linked"
+fi
+
+echo "Dotfiles linked!"
