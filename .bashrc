@@ -40,6 +40,15 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
+# Check for "git-prompt" script
+if [[ -x /usr/share/git-core/contrib/completion/git-prompt.sh ]]; then
+	source /usr/share/git-core/contrib/completion/git-prompt.sh
+elif [[ -x /etc/bash_completion.d/git-prompt ]]; then
+	source /etc/bash_completion.d/git-prompt
+elif [[ -x /usr/lib/git-core/git-sh-prompt ]]; then
+	source /usr/lib/git-core/git-sh-prompt
+fi
+
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
