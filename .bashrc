@@ -41,11 +41,11 @@ case "$TERM" in
 esac
 
 # Check for "git-prompt" script
-if [[ -x /usr/share/git-core/contrib/completion/git-prompt.sh ]]; then
+if [[ -f /usr/share/git-core/contrib/completion/git-prompt.sh ]]; then
 	source /usr/share/git-core/contrib/completion/git-prompt.sh
-elif [[ -x /etc/bash_completion.d/git-prompt ]]; then
+elif [[ -f /etc/bash_completion.d/git-prompt ]]; then
 	source /etc/bash_completion.d/git-prompt
-elif [[ -x /usr/lib/git-core/git-sh-prompt ]]; then
+elif [[ -f /usr/lib/git-core/git-sh-prompt ]]; then
 	source /usr/lib/git-core/git-sh-prompt
 fi
 
