@@ -1,5 +1,9 @@
 #!/bin/bash
 
+##############################
+### Link dotfiles to $HOME ###
+##############################
+
 ### this is a function that links a dotfile to $HOME directory 
 link_file() {
 	local file=$1
@@ -16,5 +20,17 @@ dotfile_list=(".bashrc" ".tmux.conf")
 for dotfile in "${dotfile_list[@]}"; do
 	link_file "${dotfile}"
 done
+#### END link dotfiles section ####
+
+#############################
+####     Setup $PATH     ####
+#############################
+
+if [[ ! -d ~/.local/bin ]]; then
+	mkdir -p ~/.local/bin
+	echo "$HOME/.local/bin created"
+#	echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+fi
+#### END $PATH section ####
 
 echo "Done!"
