@@ -124,4 +124,6 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-export PATH="$HOME/.local/bin:$PATH"
+
+### Do this once, after setup
+# export PATH="$HOME/.local/bin:$PATH"
