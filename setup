@@ -1,15 +1,20 @@
 #!/bin/bash
 
-# Description: Link dotfiles to home directory
+### this is a function that links a dotfile to $HOME directory 
+link_file() {
+	local file=$1
+	if [[ -f ~/dotfiles/${file} ]]; then
+		ln -sf ~/dotfiles/"${file}" ~/"${file}"
+		echo "\"""$file""\" linked"
+	fi
+}
 
-if [[ -f ~/dotfiles/.bashrc ]]; then
-	ln -sf ~/dotfiles/.bashrc ~/.bashrc
-	echo "\".bashrc\" linked"
-fi
+### this is an array with a list of dotfiles to be linked to $HOME directory
+dotfile_list=(".bashrc" ".tmux.conf")
 
-if [[ -f ~/dotfiles/.tmux.conf ]]; then
-	ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
-	echo "\".tmux.conf\" linked"
-fi
+# linking the dotfiles
+for dotfile in "${dotfile_list[@]}"; do
+	link_file "${dotfile}"
+done
 
-echo "Dotfiles linked!"
+echo "Done!"
