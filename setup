@@ -14,7 +14,7 @@ link_file() {
 }
 
 ### this is an array with a list of dotfiles to be linked to $HOME directory
-dotfile_list=(".bashrc" ".tmux.conf")
+dotfile_list=(".bashrc" ".tmux.conf" ".vimrc")
 
 # linking the dotfiles
 for dotfile in "${dotfile_list[@]}"; do
