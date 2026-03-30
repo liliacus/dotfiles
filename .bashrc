@@ -126,7 +126,7 @@ if ! shopt -oq posix; then
 fi
 
 ## Some aliases for "kubectl"
-if [[ command -v kubectl &>/dev/null ]]; then
+if command -v kubectl &>/dev/null; then
   alias k='kubectl'
   #source /etc/bash_completion # not needed on macos
   source <(kubectl completion bash)
