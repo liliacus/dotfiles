@@ -35,4 +35,5 @@ if [[ ! -d ~/.local/bin ]]; then
 fi
 #### END $PATH section ####
 
+
 echo "Done!"

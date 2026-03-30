@@ -134,4 +134,5 @@ if command -v kubectl &>/dev/null; then
 fi
 
 ## Do this once, after setup
+## maybe ....
 export PATH="$HOME/.local/bin:$PATH"
