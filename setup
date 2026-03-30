@@ -4,7 +4,7 @@
 ### Link dotfiles to $HOME ###
 ##############################
 
-### this is a function that links a dotfile to $HOME directory 
+### this is a function that links a dotfile to $HOME directory
 link_file() {
 	local file=$1
 	if [[ -f ~/dotfiles/${file} ]]; then
@@ -22,14 +22,16 @@ for dotfile in "${dotfile_list[@]}"; do
 done
 #### END link dotfiles section ####
 
+
 #############################
 ####     Setup $PATH     ####
+### for personal bineries ###
 #############################
 
 if [[ ! -d ~/.local/bin ]]; then
 	mkdir -p ~/.local/bin
 	echo "$HOME/.local/bin created"
-#	echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+	echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 fi
 #### END $PATH section ####
 
