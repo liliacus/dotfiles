@@ -125,5 +125,13 @@ if ! shopt -oq posix; then
   fi
 fi
 
-### Do this once, after setup
+## Some aliases for "kubectl"
+if [[command -v kubectl &>/dev/null]]; then
+  alias k='kubectl'
+  #source /etc/bash_completion # not needed on macos
+  source <(kubectl completion bash)
+  complete -o default -F __start_kubectl k
+fi
+
+## Do this once, after setup
 # export PATH="$HOME/.local/bin:$PATH"
