@@ -136,3 +136,9 @@ fi
 ## Do this once, after setup
 ## maybe ....
 export PATH="$HOME/.local/bin:$PATH"
+
+## Check if "brew" is installed
+if [ -d /home/linuxbrew/.linuxbrew/bin  ]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv bash)"
+fi
+
